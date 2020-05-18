@@ -1,0 +1,10 @@
+type Blog {
+   title: String!
+   body: String!
+   completed: Boolean
+}
+
+type Query {
+   allBlogs: [Blog!]
+   blogsByCompletedFlag(completed: Boolean!): [Blog!]
+}
