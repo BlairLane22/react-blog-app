@@ -1,7 +1,10 @@
 import { client, q } from '../config/db'
 
 const getAllBlogs = client.query(
-  q.Paginate(q.Match(q.Ref('indexes/allBlogs')))
+  q.Get(
+    q.Match(
+      q.Index("allBlogs"))
+  )
 )
 .then((ret) => console.log(ret))
 
